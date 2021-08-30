@@ -1,0 +1,36 @@
+body {
+ background-color: rgb(158, 213, 226);
+ display:flex;
+ align-items: center;
+ justify-content: center;
+ width:100%;
+ height:100vh;
+
+
+}
+
+
+.pulsing-star {
+    width:200px;
+    height:200px;
+    color:#dc1818;
+    background:
+     radial-gradient(circle at 60% 65%, currentColor 62%, #0000 65%) top left,
+     radial-gradient(circle at 40% 65%, currentColor 62%, #0000 65%) top right,
+     linear-gradient(to bottom left, currentColor 42%,#0000 43%) bottom left ,
+     linear-gradient(to bottom right,currentColor 42%,#0000 43%) bottom right;
+    background-size:50% 50%;
+    background-repeat:no-repeat;
+    position:relative;
+  }
+  .pulsing-star:after {
+    content:"";
+    position:absolute;
+    inset:0;
+    background:inherit;
+    opacity:0.4;
+    animation:pulse 1s infinite;
+  }
+  @keyframes pulse {
+    to {transform:scale(1.8);opacity:0}
+  }
